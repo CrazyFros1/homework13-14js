@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework13-14js</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrapper" id="test-holder">
+        <script type="text/template" id="test">
+            <h1 class="test_header"><%= list[0].top %></h1>
+            <ol class="test_body">
+                <% for(var i = 1; i < list.length - 1; i++) { %>
+                    <li>
+                        <%= list[i].question %>
+                        <ul>
+                            <% list[i].answer.forEach(function(item) { %>
+                            <li>
+                                <label>
+                                    <input type="checkbox" class="ch">
+                                    <%= item[0] %>
+                                </label>
+                            </li>
+                            <% }); %>
+                        </ul>
+                    </li>
+                <% }; %>
+            </ol>
+            <button class="test_button"><%= list[list.length - 1].button %></button>
+        </script>
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.3.0/lodash.js"></script>
+<script src="js/tmpl.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
